@@ -36,6 +36,10 @@ export class HomeComponent {
 
   logoBase64 = '';
 
+  // AÑADE ESTAS DOS LÍNEAS:
+  nombreArchivoHistorial: string = '';
+  nombreArchivoLogo: string = '';
+
   constructor(
     private parser: WhatsappParserService,
     private pdfService: PdfService
@@ -50,6 +54,8 @@ export class HomeComponent {
     const file = event.target.files[0];
 
     if (!file) return;
+
+     this.nombreArchivoHistorial = file.name; // <--- AGREGADO
 
     // =========================================
     // TXT
@@ -230,6 +236,9 @@ export class HomeComponent {
     const file = event.target.files[0];
 
     if (!file) return;
+
+    this.nombreArchivoLogo = file.name; // <--- AGREGADO
+
 
     const reader = new FileReader();
 
