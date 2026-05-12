@@ -1,0 +1,140 @@
+<div class="container">
+
+  <h1>
+    REPORTE WHATSAPP
+  </h1>
+
+  <!-- ========================= -->
+  <!-- FORMULARIO -->
+  <!-- ========================= -->
+
+  <div class="card">
+
+    <label>
+      Subir TXT o ZIP:
+    </label>
+
+    <input
+      type="file"
+      (change)="onFileSelected($event)"
+    >
+
+    <label>
+      Logo empresa:
+    </label>
+
+    <input
+      type="file"
+      (change)="cargarLogo($event)"
+    >
+
+    <label>
+      Fecha Inicio:
+    </label>
+
+    <input
+      type="date"
+      [(ngModel)]="fechaInicio"
+    >
+
+    <label>
+      Fecha Fin:
+    </label>
+
+    <input
+      type="date"
+      [(ngModel)]="fechaFin"
+    >
+
+    <label class="checkbox">
+
+      <input
+        type="checkbox"
+        [(ngModel)]="incluirImagenes"
+      >
+
+      Incluir Imágenes
+
+    </label>
+
+    <button (click)="generarPDF()">
+
+      GENERAR PDF
+
+    </button>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- PREVIEW CHAT -->
+  <!-- ========================= -->
+
+  <div class="preview">
+
+    <div
+      class="mensaje"
+      *ngFor="let msg of mensajes"
+    >
+
+      <div class="burbuja">
+
+        <!-- ========================= -->
+        <!-- AUTOR -->
+        <!-- ========================= -->
+
+        <div class="autor">
+
+          {{ msg.autor }}
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- MENSAJE -->
+        <!-- ========================= -->
+
+        <div class="texto">
+
+          {{ msg.mensaje }}
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- IMAGEN -->
+        <!-- ========================= -->
+
+        <img
+
+          *ngIf="msg.imagen"
+
+          [src]="msg.imagen"
+
+          alt="Adjunto"
+
+          style="
+            max-width: 250px;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 12px;
+            display: block;
+            border: 1px solid #ddd;
+          "
+
+        >
+
+        <!-- ========================= -->
+        <!-- FECHA -->
+        <!-- ========================= -->
+
+        <div class="fecha">
+
+          {{ msg.fecha | date:'dd/MM/yyyy HH:mm:ss' }}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

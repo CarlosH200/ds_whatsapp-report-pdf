@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #ece5dd;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+button {
+
+  background: #25D366;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.preview {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.mensaje {
+
+  display: flex;
+}
+
+.burbuja {
+
+  background: #DCF8C6;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  max-width: 70%;
+}
+
+.autor {
+
+  font-weight: bold;
+
+  color: #075E54;
+}
+
+.fecha {
+
+  font-size: 10px;
+
+  text-align: right;
+
+  color: gray;
+
+  margin-top: 5px;
+}
